@@ -12,6 +12,7 @@ const (
 	LogPanic Level = iota
 	LogError
 	LogWarn
+	LogNotice
 	LogInfo
 	LogDebug
 	LogTrace
@@ -26,6 +27,7 @@ func init() {
 	RegisterCustomLevel(LogPanic, "PANIC")
 	RegisterCustomLevel(LogError, "ERROR")
 	RegisterCustomLevel(LogWarn, "WARN")
+	RegisterCustomLevel(LogNotice, "NOTICE")
 	RegisterCustomLevel(LogInfo, "INFO")
 	RegisterCustomLevel(LogDebug, "DEBUG")
 	RegisterCustomLevel(LogTrace, "TRACE")

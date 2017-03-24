@@ -16,7 +16,7 @@ func (ctx *LogContext) Error(msg string) {
 }
 
 func (ctx *LogContext) ErrorF(msg string, args ...interface{}) {
-	Error(fmt.Sprintf(msg, args...))
+	ctx.Error(fmt.Sprintf(msg, args...))
 }
 
 func (ctx *LogContext) Warn(msg string) {
@@ -24,7 +24,15 @@ func (ctx *LogContext) Warn(msg string) {
 }
 
 func (ctx *LogContext) WarnF(msg string, args ...interface{}) {
-	Warn(fmt.Sprintf(msg, args...))
+	ctx.Warn(fmt.Sprintf(msg, args...))
+}
+
+func (ctx *LogContext) Notice(msg string) {
+	ctx.impl.Log(LogNotice, msg, nil)
+}
+
+func (ctx *LogContext) NoticeF(msg string, args ...interface{}) {
+	ctx.Notice(fmt.Sprintf(msg, args...))
 }
 
 func (ctx *LogContext) Info(msg string) {
@@ -32,7 +40,7 @@ func (ctx *LogContext) Info(msg string) {
 }
 
 func (ctx *LogContext) InfoF(msg string, args ...interface{}) {
-	Info(fmt.Sprintf(msg, args...))
+	ctx.Info(fmt.Sprintf(msg, args...))
 }
 
 func (ctx *LogContext) Debug(msg string) {
@@ -40,7 +48,7 @@ func (ctx *LogContext) Debug(msg string) {
 }
 
 func (ctx *LogContext) DebugF(msg string, args ...interface{}) {
-	Debug(fmt.Sprintf(msg, args...))
+	ctx.Debug(fmt.Sprintf(msg, args...))
 }
 
 func (ctx *LogContext) Trace(msg string) {
@@ -48,7 +56,7 @@ func (ctx *LogContext) Trace(msg string) {
 }
 
 func (ctx *LogContext) TraceF(msg string, args ...interface{}) {
-	Trace(fmt.Sprintf(msg, args...))
+	ctx.Trace(fmt.Sprintf(msg, args...))
 }
 
 func (ctx *LogContext) Recover() {

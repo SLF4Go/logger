@@ -27,9 +27,6 @@ var (
 func init() {
 	testImpl = &testLogImpl{def: defaultLogger{}}
 	RegisterLogImpl("test", testImpl)
-}
-
-func TestNew(t *testing.T) {
 	testCtx = New("test")
 }
 
@@ -57,6 +54,19 @@ func TestWarn(t *testing.T) {
 
 	// Run test
 	testCtx.Warn(testMsg)
+}
+
+func TestNotice(t *testing.T) {
+	// Set up test
+	const testMsg = "This is a NOTICE message!"
+	testImpl.validate = func(level Level, msg string, stack []string) {
+		if level != LogNotice || msg != testMsg || stack != nil {
+			t.FailNow()
+		}
+	}
+
+	// Run test
+	testCtx.Notice(testMsg)
 }
 
 func TestInfo(t *testing.T) {

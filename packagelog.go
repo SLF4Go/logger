@@ -26,6 +26,14 @@ func WarnF(msg string, args ...interface{}) {
 	defaultCtx.WarnF(msg, args...)
 }
 
+func Notice(msg string) {
+	defaultCtx.Notice(msg)
+}
+
+func NoticeF(msg string, args ...interface{}) {
+	defaultCtx.NoticeF(msg, args...)
+}
+
 func Info(msg string) {
 	defaultCtx.Info(msg)
 }
