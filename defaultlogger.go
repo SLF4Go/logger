@@ -2,9 +2,16 @@ package logger
 
 import "fmt"
 
+var gaveWarning bool
+
 type defaultLogger struct{}
 
-func (defaultLogger) Log(level Level, msg string, stack []string) {
+func (l defaultLogger) Log(level Level, msg string, stack []string) {
+	if !gaveWarning {
+		gaveWarning = true
+		l.Log(LogWarn, "You are using the SLF4Go default logger, it is recommended to import a connector", nil)
+	}
+
 	fmt.Printf("[%s] %s\n", LevelName(level), msg)
 
 	if stack != nil {
