@@ -1,4 +1,5 @@
 # SLF4Go
+[![Build Status](https://travis-ci.org/SLF4Go/logger.svg?branch=master)](https://travis-ci.org/SLF4Go/logger)
 
 SLF4go, or in full 'Simple Logging Facade 4 Go' is a logging interface much like [SLF4J](https://www.slf4j.org/). This library allows APIs/Libraries to call upon a generic logging interface while still leaving the choice of actual logging library to the end developer.
 
