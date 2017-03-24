@@ -11,8 +11,10 @@ import "github.com/slf4go/logger"
 #### For end developers
 This is an example on how to choose a specific logging library. In this example I'm showing [go-logging](https://github.com/op/go-logging)
 ```go
-import "github.com/slf4go/logger"
-import _ "github.com/slf4go/go-logging-connector"
+import (
+	"github.com/slf4go/logger"
+	_ "github.com/slf4go/go-logging-connector"
+)
 ```
 
 After having done this, you can still configure your specific logging module (go-logging here) to your hearts content. Any libraries you use that use SLF4Go will automatically use this logging library as well
