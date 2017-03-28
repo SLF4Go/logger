@@ -9,67 +9,67 @@ import (
 
 var impl LogImpl
 
-// Calls the underlying log implementation with log level LogError and the provided message
+// Error calls the underlying log implementation with log level LogError and the provided message
 func Error(msg string) {
 	impl.Log(LogError, msg, nil)
 }
 
-// Calls the underlying log implementation with log level LogError and a formatted message
+// Errorf calls the underlying log implementation with log level LogError and a formatted message
 func Errorf(msg string, args ...interface{}) {
 	Error(fmt.Sprintf(msg, args...))
 }
 
-// Calls the underlying log implementation with log level LogWarn and the provided message
+// Warn calls the underlying log implementation with log level LogWarn and the provided message
 func Warn(msg string) {
 	impl.Log(LogWarn, msg, nil)
 }
 
-// Calls the underlying log implementation with log level LogWarn and a formatted message
+// Warnf calls the underlying log implementation with log level LogWarn and a formatted message
 func Warnf(msg string, args ...interface{}) {
 	Warn(fmt.Sprintf(msg, args...))
 }
 
-// Calls the underlying log implementation with log level LogNotice and the provided message
+// Notice calls the underlying log implementation with log level LogNotice and the provided message
 func Notice(msg string) {
 	impl.Log(LogNotice, msg, nil)
 }
 
-// Calls the underlying log implementation with log level LogNotice and a formatted message
+// Noticef calls the underlying log implementation with log level LogNotice and a formatted message
 func Noticef(msg string, args ...interface{}) {
 	Notice(fmt.Sprintf(msg, args...))
 }
 
-// Calls the underlying log implementation with log level LogInfo and the provided message
+// Info calls the underlying log implementation with log level LogInfo and the provided message
 func Info(msg string) {
 	impl.Log(LogInfo, msg, nil)
 }
 
-// Calls the underlying log implementation with log level LogInfo and a formatted message
+// Infof calls the underlying log implementation with log level LogInfo and a formatted message
 func Infof(msg string, args ...interface{}) {
 	Info(fmt.Sprintf(msg, args...))
 }
 
-// Calls the underlying log implementation with log level LogDebug and the provided message
+// Debug calls the underlying log implementation with log level LogDebug and the provided message
 func Debug(msg string) {
 	impl.Log(LogDebug, msg, nil)
 }
 
-// Calls the underlying log implementation with log level LogDebug and a formatted message
+// Debugf calls the underlying log implementation with log level LogDebug and a formatted message
 func Debugf(msg string, args ...interface{}) {
 	Debug(fmt.Sprintf(msg, args...))
 }
 
-// Calls the underlying log implementation with log level LogTrace and the provided message
+// Trace calls the underlying log implementation with log level LogTrace and the provided message
 func Trace(msg string) {
 	impl.Log(LogTrace, msg, nil)
 }
 
-// Calls the underlying log implementation with log level LogTrace and a formatted message
+// Tracef calls the underlying log implementation with log level LogTrace and a formatted message
 func Tracef(msg string, args ...interface{}) {
 	Trace(fmt.Sprintf(msg, args...))
 }
 
-// Alternative method to recover() that invokes the underlying log implementation
+// Recover is an alternative method to recover() that invokes the underlying log implementation
 // with log level LogPanic and attempts to format the panic message with %v
 //
 // Usage:
@@ -80,7 +80,7 @@ func Recover() {
 	}
 }
 
-// Alternative method to recover() that invokes the underlying log implementation
+// RecoverStack is an alternative method to recover() that invokes the underlying log implementation
 // with log level LogPanic and attempts to format the panic message with %v.
 // Next to that the logger will also output the stack trace that led up to the panic()
 func RecoverStack() {
