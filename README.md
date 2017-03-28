@@ -1,6 +1,6 @@
 # SLF4Go
-[![Build Status](https://travis-ci.org/SLF4Go/logger.svg?branch=master)](https://travis-ci.org/SLF4Go/logger)
-[![GoDoc](https://godoc.org/github.com/SLF4Go/logger?status.svg)](https://godoc.org/github.com/SLF4Go/logger)
+[![Build Status](https://travis-ci.org/slf4go/logger.svg?branch=master)](https://travis-ci.org/slf4go/logger)
+[![GoDoc](https://godoc.org/github.com/slf4go/logger?status.svg)](https://godoc.org/github.com/slf4go/logger)
 
 SLF4go, or in full 'Simple Logging Facade 4 Go' is a logging interface much like [SLF4J](https://www.slf4j.org/). This library allows APIs/Libraries to call upon a generic logging interface while still leaving the choice of actual logging library to the end developer.
 
