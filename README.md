@@ -15,7 +15,7 @@ This is an example on how to choose a specific logging library. In this example 
 ```go
 import (
 	"github.com/slf4go/logger"
-	_ "github.com/slf4go/go-logging-connector"
+	_ "github.com/slf4go/go-logging-binding"
 )
 ```
 

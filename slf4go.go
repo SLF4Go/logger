@@ -12,7 +12,7 @@ type LogBinding interface {
 var (
 	overWrittenDefault bool
 
-	activeLevel Level = LogInfo
+	activeLevel = LogInfo
 )
 
 func init() {

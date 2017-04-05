@@ -5,7 +5,7 @@ type Level int
 
 // Log levels used by the functions defined in logfunctions.go
 const (
-	// LogAll is solely used by SetLevel, to turn off all logging
+	// LogNone is solely used by SetLevel, to turn off all logging
 	LogNone Level = iota
 	// LogPanic is used by Recover and RecoverStack
 	LogPanic
