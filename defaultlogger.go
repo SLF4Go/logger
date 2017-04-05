@@ -1,6 +1,9 @@
 package logger
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 var gaveWarning bool
 
@@ -12,11 +15,20 @@ func (l defaultLogger) Log(level Level, msg string, stack []string) {
 		l.Log(LogWarn, "You are using the SLF4Go default logger, it is recommended to import a connector", nil)
 	}
 
-	fmt.Printf("[%s] %s\n", LevelName(level), msg)
+	var out *os.File
+	if level <= LogWarn {
+		out = os.Stderr
+	} else {
+		out = os.Stdout
+	}
+
+	fmt.Fprintf(out, "[%s] %s\n", LevelName(level), msg)
 
 	if stack != nil {
 		for i, line := range stack {
-			fmt.Printf("[%s] %d: %s\n", LevelName(level), len(stack)-i-1, line)
+			fmt.Fprintf(out, "[%s] %d: %s\n", LevelName(level), len(stack)-i-1, line)
 		}
 	}
 }
+
+func (defaultLogger) SetLevel(level Level) {}

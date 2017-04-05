@@ -16,13 +16,15 @@ func (impl testLogImpl) Log(level Level, msg string, stack []string) {
 	impl.validate(level, msg, stack)
 }
 
+func (impl testLogImpl) SetLevel(level Level) {}
+
 // We keep our own type-asserted pointer so we can set the validate func later on
 var testImpl *testLogImpl
 
 // Create a reference so we can adjust the test validator and then register it
 func init() {
 	testImpl = &testLogImpl{}
-	RegisterLogImpl(testImpl)
+	BindLogImpl(testImpl)
 }
 
 func testLogFunction(t *testing.T, call func(string, ...interface{}), expectedLevel Level) {
