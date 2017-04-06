@@ -14,9 +14,14 @@ func Error(msg string) {
 	log(LogError, msg, nil)
 }
 
+// ErrorE calls the underlying log implementation with log level LogError and the result of err.Error()
+func ErrorE(err error) {
+	log(LogError, err.Error(), nil)
+}
+
 // Errorf calls the underlying log implementation with log level LogError and a formatted message
-func Errorf(msg string, args ...interface{}) {
-	Error(fmt.Sprintf(msg, args...))
+func Errorf(format string, args ...interface{}) {
+	Error(fmt.Sprintf(format, args...))
 }
 
 // Warn calls the underlying log implementation with log level LogWarn and the provided message
@@ -25,8 +30,8 @@ func Warn(msg string) {
 }
 
 // Warnf calls the underlying log implementation with log level LogWarn and a formatted message
-func Warnf(msg string, args ...interface{}) {
-	Warn(fmt.Sprintf(msg, args...))
+func Warnf(format string, args ...interface{}) {
+	Warn(fmt.Sprintf(format, args...))
 }
 
 // Notice calls the underlying log implementation with log level LogNotice and the provided message
@@ -35,8 +40,8 @@ func Notice(msg string) {
 }
 
 // Noticef calls the underlying log implementation with log level LogNotice and a formatted message
-func Noticef(msg string, args ...interface{}) {
-	Notice(fmt.Sprintf(msg, args...))
+func Noticef(format string, args ...interface{}) {
+	Notice(fmt.Sprintf(format, args...))
 }
 
 // Info calls the underlying log implementation with log level LogInfo and the provided message
@@ -45,8 +50,8 @@ func Info(msg string) {
 }
 
 // Infof calls the underlying log implementation with log level LogInfo and a formatted message
-func Infof(msg string, args ...interface{}) {
-	Info(fmt.Sprintf(msg, args...))
+func Infof(format string, args ...interface{}) {
+	Info(fmt.Sprintf(format, args...))
 }
 
 // Debug calls the underlying log implementation with log level LogDebug and the provided message
@@ -55,8 +60,8 @@ func Debug(msg string) {
 }
 
 // Debugf calls the underlying log implementation with log level LogDebug and a formatted message
-func Debugf(msg string, args ...interface{}) {
-	Debug(fmt.Sprintf(msg, args...))
+func Debugf(format string, args ...interface{}) {
+	Debug(fmt.Sprintf(format, args...))
 }
 
 // Trace calls the underlying log implementation with log level LogTrace and the provided message
@@ -65,8 +70,8 @@ func Trace(msg string) {
 }
 
 // Tracef calls the underlying log implementation with log level LogTrace and a formatted message
-func Tracef(msg string, args ...interface{}) {
-	Trace(fmt.Sprintf(msg, args...))
+func Tracef(format string, args ...interface{}) {
+	Trace(fmt.Sprintf(format, args...))
 }
 
 // Recover is an alternative method to recover() that invokes the underlying log implementation
