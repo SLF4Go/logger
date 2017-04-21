@@ -43,7 +43,7 @@ func SetLevel(level Level) {
 }
 
 func log(level Level, msg string, stack []string) {
-	if level <= level {
+	if level <= activeLevel {
 		binding.Log(level, msg, stack)
 	}
 }
